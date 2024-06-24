@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gardevoir" />
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Register - D&D Blog</title>
+</head>
+<body class="backgroundedBody">
+    <header>
+        <div id="HeaderLeftMenu">
+            <a id="HomeButton" href="index.html">
+                
+            </a>
+            <div>
+                <h1><a href="index.html">D&D Blog</a></h1>
+                <nav id="TopicNav">
+                    <a data-topic="Adventure" href="topic.html">Adventure</a>
+                    <a data-topic="Tavern" href="topic.html">Tavern</a>
+                    <a data-topic="Gods" href="topic.html">Gods</a>
+                </nav>
+            </div>
+        </div>
+        <div id="HeaderRightMenu">
+            <nav id="ButtonNav">
+                <a data-button="Login" href="login.html">Login</a>
+                <a data-button="AddPost" href="addPost.html">Add Post</a>
+                <a data-button="Profile" href="profile.html">Profile</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="CenterFormView">
+        <div class="centerFormViewWrap">
+            <div class="centerFormView_illustration" data-topic="Gods"></div>
+            <div class="centerFormView_form">
+                <h1>Registration</h1>
+                <form class="slickForm" method="POST">
+                    <button>Register</button>
+                    <input type="password" name="password" placeholder="Password" required />
+                    <select name="gender" required>
+                        <option value="f">Female</option>
+                        <option value="m">Male</option>
+                    </select>
+                    <input type="date" name="dob" placeholder="DOB" required />
+                    <input type="text" name="name" placeholder="Username" pattern="[A-z][a-z0-9]+" minlength="3" maxlength="20" required />
+                    <input type="email" name="email" placeholder="Email" required />
+                </form>
+                <span>Looking for <b><a href="login.html">login</a></b>?</span>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>(c) D&D Blog 2024</p>
+        <p><a href="about.html">About</a></p>
+    </footer>
+
+    <script src="js/controllers/registrationController.js"></script>
+    <script src="js/models/userModel.js"></script>
+    <script src="js/controllers/topicController.js"></script>
+</body>
+</html>

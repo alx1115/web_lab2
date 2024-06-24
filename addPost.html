@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gardevoir" />
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Add Post - D&D Blog</title>
+</head>
+<body class="backgroundedBody">
+    <header>
+        <div id="HeaderLeftMenu">
+            <a id="HomeButton" href="index.html">
+                
+            </a>
+            <div>
+                <h1><a href="index.html">D&D Blog</a></h1>
+                <nav id="TopicNav">
+                    <a data-topic="Adventure" href="topic.html">Adventure</a>
+                    <a data-topic="Tavern" href="topic.html">Tavern</a>
+                    <a data-topic="Gods" href="topic.html">Gods</a>
+                </nav>
+            </div>
+        </div>
+        <div id="HeaderRightMenu">
+            <nav id="ButtonNav">
+                <a data-button="Login" href="login.html">Login</a>
+                <a data-button="AddPost" href="addPost.html">Add Post</a>
+                <a data-button="Profile" href="profile.html">Profile</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="CenterFormView">
+        <div class="centerFormViewWrap">
+            <div class="centerFormView_illustration" data-topic="Adventure"></div>
+            <div class="centerFormView_form">
+                <h1>Add Post</h1>
+                <form id="addPostForm" class="slickForm" method="POST">
+                    <button type="submit" class="slickButton">Add Post</button>
+                    <select id="postTopic" name="topic" required>
+                        <option value="Adventure">Adventure</option>
+                        <option value="Tavern">Tavern</option>
+                        <option value="Gods">Gods</option>
+                    </select>
+                    <input type="text" id="postImage" name="image" placeholder="Image URL" required>
+                    <textarea id="postContent" name="content" placeholder="Content" required></textarea>
+                    <input type="text" id="postTitle" name="title" placeholder="Title" required>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>(c) D&D Blog 2024</p>
+        <p><a href="about.html">About</a></p>
+    </footer>
+
+    <script src="js/models/postModel.js"></script>
+    <script src="js/controllers/addPostController.js"></script>
+    <script src="js/controllers/topicController.js"></script>
+</body>
+</html>

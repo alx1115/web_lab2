@@ -1,0 +1,504 @@
+@import "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap";
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    background-color: #E2E8F0;
+    color: #1A202C;
+
+    padding: 0 20px;
+    margin: 50px auto;
+    max-width: 1400px;
+
+    font-family: 'Montserrat', sans-serif;
+}
+
+body.backgroundedBody {
+    background: linear-gradient(to bottom, #f0f9ff, #c6f6d5), url(https://example.com/new-background-image.png);
+    background-size: cover;
+    min-height: 100vh;
+}
+
+body.backgroundedBody header {
+    border: 8px solid #CBD5E0;
+    border-radius: 12px;
+    background-color: #EDF2F7;
+    box-shadow: 0px 10px 25px 3px rgba(0, 0, 0, 0.1);
+    color: #2D3748;
+}
+
+a {
+    color: #2B6CB0;
+    text-decoration: none;
+}
+
+img {
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+span[contenteditable] {
+    outline: none;
+    border-bottom: 2px solid #4A5568;
+}
+
+span[contenteditable]::after {
+    display: inline-block;
+    content: "✎";
+    width: 40px;
+}
+
+[data-topic] {
+    color: var(--topic-color);
+}
+
+.postCard_image[data-topic] {
+    background-color: var(--topic-color);
+}
+
+[data-topic="Adventure"] {
+    --topic-color: #E53E3E;
+}
+
+[data-topic="Tavern"] {
+    --topic-color: #DD6B20;
+}
+
+[data-topic="Gods"] {
+    --topic-color: #3182CE;
+}
+
+.ava {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#HeaderLeftMenu {
+    display: flex;
+    gap: 15px;
+}
+
+#HeaderLeftMenu h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+#HeaderLeftMenu > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+nav#TopicNav {
+    display: flex;
+    font-weight: 700;
+    font-size: 18px;
+    gap: 20px;
+}
+
+[data-button] {
+    color: var(--button-color);
+}
+
+[data-button="Login"] {
+    --button-color: #48BB78;
+}
+
+[data-button="AddPost"] {
+    --button-color: #ED8936;
+}
+
+[data-button="Profile"] {
+    --button-color: #ECC94B;
+}
+
+nav#ButtonNav {
+    display: flex;
+    font-weight: 700;
+    font-size: 18px;
+    gap: 20px;
+}
+
+.CenterFormView {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.centerFormViewWrap {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    width: min(90%, 720px);
+    min-height: 50vh;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #FFF;
+    backdrop-filter: blur(5px);
+    align-items: center;
+}
+
+.centerFormView_illustration {
+    background-color: var(--topic-color);
+    height: 100%;
+    border-radius: 0 8px 8px 0;
+    opacity: 0.7;
+}
+
+.centerFormView_form form.slickForm {
+    filter: grayscale(1);
+}
+
+#PostListView {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    font-size: 22px;
+
+    max-width: 1200px;
+    margin: auto;
+}
+
+.postCard {
+    display: flex;
+    gap: 25px;
+    background: #FFF;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.postCard_details {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-bottom: 25px;
+}
+
+.postCard h2 {
+    font-size: 36px;
+}
+
+.postCard p {
+    flex: 1;
+    font-weight: 400;
+    color: #718096;
+}
+
+.postCard_image {
+    border-radius: 12px;
+    width: 350px;
+    height: 210px;
+    transition: .2s transform ease-in-out;
+}
+
+.postCard:hover .postCard_image {
+    transform: translateY(-10px);
+}
+
+.postCard_topicLink {
+    position: absolute;
+    bottom: 0;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.paginator {
+    display: flex;
+    justify-content: space-between;
+}
+
+.paginator a {
+    font-weight: 700;
+    color: #ED8936;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-weight: 400;
+    font-size: 18px;
+    color: #718096;
+    margin-bottom: 50px;
+}
+
+#FooterButtons {
+    display: none;
+}
+
+#TopicInfoView, #UserInfoView {
+    text-align: center;
+}
+
+:is(#TopicInfoView, #UserInfoView) h1 {
+    margin: 0;
+    margin-bottom: 15px;
+    font-size: 36px;
+}
+
+#TopicInfoView p, #UserInfoView table {
+    font-size: 20px;
+    color: #718096;
+    padding-bottom: 25px;
+    border-bottom: 2px solid;
+    border-image: linear-gradient(to right, transparent, var(--topic-color), transparent) 5;
+}
+
+#UserInfoView table {
+    --topic-color: #fff;
+    width: 100%;
+}
+
+article#PostView {
+    width: min(95vw, 1100px);
+    font-size: 20px;
+    line-height: 1.6;
+    margin: auto;
+}
+
+article#PostView :not(.postHeroImage) {
+    max-width: 800px;
+    margin-right: auto;
+    margin-left:auto;
+}
+
+article#PostView :is(h1, h2, h3, h4, h5, h6) {
+    margin-bottom: 10px;
+}
+
+article#PostView h1 {
+    margin-top: 0;
+}
+
+article#PostView h1 a {
+    font-size: 18px;
+    font-weight: 400;
+    color: #48BB78;
+    float: right;
+    text-decoration: underline;
+}
+
+article#PostView p {
+    margin-bottom: 30px;
+}
+
+article#PostView .postHeroImage {
+    height: 60vh;
+    background-color: var(--topic-color);
+    border-radius: 12px;
+}
+
+article#PostView :is(.postHeroImage, figure) {
+    margin: 30px 0;
+}
+
+article#PostView .slickForm textarea {
+    min-height: 100vh;
+}
+
+#CommentView {
+    width: min(95vw, 800px);
+    margin: auto;
+    padding-top: 80px;
+    border-top: 2px solid;
+    border-image: linear-gradient(to right, transparent, var(--topic-color), transparent) 5;
+    color: inherit;
+}
+
+#CommentView h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+#CommentView h3 {
+    font-size: 24px;
+    margin-top: 40px;
+}
+
+.comment {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.comment_details_author {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.comment_details_author[data-op="True"] a::after {
+    content: "OP";
+    padding-left: 8px;
+    font-weight: bold;
+    color: #63B3ED;
+}
+
+.comment_details_author time {
+    color: #718096;
+    font-weight: 100;
+    margin-left: 15px;
+}
+
+.comment_details_body {
+    font-size: 16px;
+}
+
+.comment_subComments {
+    padding-left: 60px;
+}
+
+form.slickForm {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 8px;
+    margin: 15px 0;
+    align-items: flex-end;
+}
+
+form.slickForm :is(input:not([type="submit"], [type="reset"]), textarea, select) {
+    border: 0;
+    font-family: inherit;
+    font-size: 18px;
+    padding: 12px;
+    background-color: #CBD5E0;
+    color: #2D3748;
+    resize: none;
+    outline: none;
+    width: 100%;
+}
+
+form.slickForm textarea {
+    font-size: 16px !important;
+}
+
+.slickButton, form.slickForm :is(button, input:is([type="submit"], [type="reset"])) {
+    position: relative;
+    appearance: none;
+    -webkit-appearance: none;
+    margin-top: 12px;
+    padding: 12px 16px;
+    width: fit-content;
+    font-weight: 700;
+    font-size: 18px;
+    color: #FFF;
+    border: none;
+    background: radial-gradient(ellipse at top, #4C51BF 0%, #434190 100%);
+    border-radius: 8px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    transition: .1s ease-in background, .1s ease-in box-shadow, .1s ease-in transform;
+}
+
+.slickButton:is(:hover, :active), form.slickForm :is(button, input:is([type="submit"], [type="reset"])):is(:hover, :active) {
+    background: radial-gradient(ellipse at top, #667EEA 0%, #5A67D8 100%);
+}
+
+.slickButton:hover, form.slickForm :is(button, input:is([type="submit"], [type="reset"])):hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 25px rgba(102, 126, 234, 0.6);
+}
+
+.slickButton:active, form.slickForm :is(button, input:is([type="submit"], [type="reset"])):active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 15px rgba(102, 126, 234, 0.6);
+}
+
+@media screen and (max-width: 1045px) {
+    .postCard {
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .postCard {
+        flex-direction: column;
+    }
+
+    .postCard_image {
+        width: 100%;
+    }
+
+    .postCard p {
+        margin-bottom: 20px;
+    }
+
+    .centerFormViewWrap {
+        grid-template-columns: 1fr;
+    }
+
+    article#PostView h1 a {
+        display: block;
+        float: unset;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    footer {
+        flex-direction: column;
+        gap: 20px;
+        margin: 0;
+    }
+
+    #HeaderRightMenu {
+        display: none;
+    }
+
+    #FooterButtons {
+        display: block;
+    }
+
+    .comment_subComments {
+        padding-left: 20px;
+    }
+}
+
+#AboutSection {
+    padding: 30px;
+    border-radius: 12px;
+    margin: 30px auto;
+    max-width: 800px;
+    text-align: center;
+}
+
+#AboutSection h1 {
+    margin-bottom: 25px;
+}
+
+#AboutSection p {
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+#ProfileSection {
+    padding: 30px;
+    border-radius: 12px;
+    margin: 30px auto;
+    max-width: 800px;
+    text-align: center;
+}
+
+.profile-info {
+    margin-top: 30px;
+}
+
+.profile-info h2 {
+    margin-bottom: 15px;
+}
+
+.profile-info p {
+    margin-bottom: 10px;
+    line-height: 1.7;
+}
